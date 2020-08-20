@@ -6,7 +6,8 @@ class Song
   attr_accessor :name
   attr_reader :artist
 
-  extend Memorable::ClassMethods
+  extend Memorable::ClassMethods         # The Parent::Child syntax is called namespacing.
+  include Memorable::InstanceMethods
 
   @@songs = []
 

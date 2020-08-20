@@ -6,12 +6,13 @@ class Artist
   attr_accessor :name
   attr_reader :songs
 
-  extend Memorable::ClassMethods
+  extend Memorable::ClassMethods         # The Parent::Child syntax is called namespacing.
+  include Memorable::InstanceMethods
 
   @@artists = []
 
   def initialize
-    @@artists << self
+    super
     @songs = []
   end
 
@@ -39,4 +40,5 @@ class Artist
   
   
 end
+  
 
